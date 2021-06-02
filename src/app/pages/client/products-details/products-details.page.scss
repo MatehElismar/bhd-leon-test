@@ -1,0 +1,45 @@
+ion-header ion-toolbar {
+  border-bottom: 5px solid #49b742;
+}
+
+.info {
+  color: #cccccc;
+  padding: 10vh 0;
+  p {
+    margin-top: 25px;
+  }
+}
+
+ion-list {
+  background: transparent !important;
+}
+
+.account-section {
+  ion-card {
+    box-shadow: none;
+    border-left: 5px solid #49b742;
+    border-radius: 0px;
+    color: #666666;
+
+    .account {
+      padding-top: 10px;
+      padding-left: 7px;
+    }
+
+    .details {
+      ion-item {
+        --padding-start: 0px;
+        --color: #666666;
+
+        span {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: 10.5px;
+          color: #999999;
+        }
+      }
+    }
+  }
+}

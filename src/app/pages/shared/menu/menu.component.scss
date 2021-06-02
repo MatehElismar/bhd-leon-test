@@ -1,0 +1,43 @@
+ion-header ion-toolbar {
+  border-bottom: 5px solid #49b742;
+}
+
+.user-info {
+    margin-left: 10px;
+  ion-avatar {
+    background: #707070;
+  }
+}
+
+.logo img{
+  padding-top: 10px;
+    width: 200px;
+}
+
+ion-list {
+  margin-top: 30px;
+  padding: 10px;
+  ion-thumbnail {
+    width: 30px;
+    height: 30px;
+  }
+
+  ion-item {
+    padding-top: 10px;
+  }
+}
+
+hr {
+  border: 1px solid #cccccc99;
+}
+
+ion-footer ion-toolbar {
+    --background: transparent;
+
+    ion-button {
+        width: 95%;
+        height: 45px;
+        border: 1px solid #49b742;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,36 @@
+<ion-split-pane content-id="main">
+  <ion-menu side="start" menu-id="main-menu" content-id="main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-item *ngIf="loggedIn" class="user-info" lines="none">
+          <ion-avatar slot="start"> <img [src]="userProfile.photo" alt="" /> </ion-avatar>
+          <ion-label>{{ userProfile.name | titlecase }} {{ userProfile.lastName | titlecase }}</ion-label>
+        </ion-item>
+        <div *ngIf="!loggedIn" class="logo ion-text-center">
+          <img src="../../../../assets/images/bhd_logo.png">
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list lines="none">
+        <ion-menu-toggle [routerLink]="item.routerLink" *ngFor="let item of items" autoHide="false">
+          <ion-item *ngIf="item.type === 'item'" button>
+            <ion-thumbnail slot="start">
+              <img src="../../../../assets/images/{{ item.icon }}" />
+            </ion-thumbnail>
+            <ion-label>{{ item.text }}</ion-label>
+          </ion-item>
+          <hr *ngIf="item.type === 'divider'" />
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+
+    <ion-footer *ngIf="loggedIn" class="ion-padding ion-text-center">
+      <ion-toolbar>
+        <ion-button (click)="signOut()" fill="clear" shape="round"> Cerrar Sesión </ion-button>
+      </ion-toolbar>
+    </ion-footer>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-split-pane>

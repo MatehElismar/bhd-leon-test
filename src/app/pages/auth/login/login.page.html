@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons  slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <div class="logo ion-text-center">
+    <img src="../../../../assets/images/bhd_logo.png" alt="Banco BHD León" />
+  </div>
+  
+  <form [formGroup]="loginForm">
+    <div class="form">
+      <div class="controls">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <div class="form-control">
+                <ion-row>
+                  <ion-col class="ion-text-center icon" size="1">
+                    <img src="../../../../assets/images/icon_user.svg" />
+                  </ion-col>
+                  <ion-col size="11">
+                    <input formControlName="id" type="text" placeholder="Documento de identidad" />
+                  </ion-col>
+                </ion-row>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <div class="bottom">
+                <div class="form-control">
+                  <ion-row>
+                    <ion-col class="icon" size="1">
+                      <img src="../../../../assets/images/icon_password.svg" />
+                    </ion-col>
+                    <ion-col size="11">
+                      <input formControlName="password" type="text" placeholder="Contraseña" />
+                    </ion-col>
+                  </ion-row>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="remember">
+        <ion-item lines="none">
+          <ion-toggle formControlName="remember" mode="ios"></ion-toggle>
+          <ion-label>Recuerda mi usuario</ion-label>
+        </ion-item>
+      </div>
+
+      <div class="button ion-text-center">
+        <ion-button (click)="save()"> Iniciar Sesión </ion-button>
+      </div>
+    </div>
+  </form>
+</ion-content>

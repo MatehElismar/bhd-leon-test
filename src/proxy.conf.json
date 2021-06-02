@@ -1,0 +1,7 @@
+{
+  "api/*": {
+    "target": "http://bhdleonfrontend-test.herokuapp.com/sign_in",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

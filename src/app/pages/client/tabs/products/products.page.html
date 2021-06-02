@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="primary"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mis productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="secondary ion-padding">
+  <ng-container *ngIf="(bankAccounts$ | async) as accounts">
+    <div class="account-section">
+      <ion-list-header class="sub-header-accounts">
+        <ion-label color="primary">Cuentas ({{accounts.length}})</ion-label>
+      </ion-list-header>
+
+      <ion-list>
+        <ion-card *ngFor="let account of accounts" routerLink="/app/details" color="tertiary">
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="2">
+                <img src="../../../../../assets/images/icon_account_gray.svg" />
+              </ion-col>
+              <ion-col size="10">
+                <p class="account">{{account.alias}} - {{account.number.substr(account.number.length - 4, 4)}}</p>
+              </ion-col>
+            </ion-row>
+
+            <div class="details">
+              <ion-item lines="none">
+                <ion-label>
+                  <h1><span>RD$</span> {{account.availableAmount}}</h1>
+                  <p>Balance disponible</p>
+                </ion-label>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+ 
+      </ion-list>
+    </div>
+  </ng-container>
+
+ <ng-container *ngIf="(creditCards$ | async) as creditCards">
+    <div class="cards-sections">
+    <ion-list-header class="sub-header-cards">
+      <ion-label>Tarjetas ({{creditCards.length}})</ion-label>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-card *ngFor="let card of creditCards" color="tertiary">
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="2">
+              <img src="../../../../../assets/images/icon_credit_card_gray.svg" />
+            </ion-col>
+            <ion-col size="10">
+              <p class="account">{{card.alias}} - {{card.number.substr(card.number.length - 4, 4)}}</p>
+            </ion-col>
+          </ion-row>
+
+          <div class="details">
+            <ion-item lines="none">
+              <ion-label>
+                <h1><span>RD$</span> {{card.availableAmountRD}}</h1>
+                <h1><span>US$</span> {{card.availableAmountUS}}</h1>
+                <p>Balance disponible</p>
+              </ion-label>
+            </ion-item>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </div>
+ </ng-container>
+</ion-content>

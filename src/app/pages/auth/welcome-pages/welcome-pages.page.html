@@ -1,0 +1,39 @@
+
+<ion-content color="secondary" class="ion-padding">
+  <ion-slides #slides pager="true">
+
+    <ion-slide class="ion-padding">
+      <div class="slide">
+        <h2>Puedes ver tus productos</h2>
+        <img src="../.././../../assets/images/slide_1.svg"/>
+      </div>
+    </ion-slide>
+
+    <ion-slide class="ion-padding">
+      <div class="slide">
+        <h2>Ahorra tiempo haciendo transacciones de forma rápida y segura</h2>
+        <img src="../.././../../assets/images/slide_2.svg"/>
+      </div>
+    </ion-slide>
+
+    <ion-slide class="ion-padding">
+      <div class="slide">
+        <h2>Aprovecha las ofertas que tenemos para ti</h2>
+        <img src="../.././../../assets/images/slide_3.svg"/>
+
+        <ion-button routerLink="/auth/login" expand="block" fill="clear" shape="round">
+          Login 
+        </ion-button>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button (click)="slides.slideNext()" slot="end" expand="block" fill="clear">
+        Continuar
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>
